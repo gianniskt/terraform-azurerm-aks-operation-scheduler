@@ -8,9 +8,11 @@ This Terraform module provisions Azure Logic Apps Consumption workflows to autom
 
 To use this module in your Terraform configuration, add the following:
 
+**Terraform Registry**: You can use:
 ```hcl
 module "aks_scheduler" {
-  source = "github.com/gianniskt/terraform-azurerm-aks-operation-scheduler?ref=v1.0"
+  source  = "gianniskt/aks-operation-scheduler/azure"
+  version = "~> 1.0"
 
   clusters = {
     my-cluster = {
@@ -37,21 +39,9 @@ module "aks_scheduler" {
 }
 ```
 
-**Note**: Replace the placeholder values (MyRG, eastus, your-subscription-id, my-aks-cluster) with your actual Azure resource details. When calling the module, you only need the `module` block with the `clusters` variable defined inline. A separate `terraform.tfvars` file is not required—the module's variables are satisfied by the module call.
-
-**Terraform Registry**: Once published to the Terraform Registry, you can use:
-```hcl
-module "aks_scheduler" {
-  source  = "gianniskt/aks-operation-scheduler/azure"
-  version = "~> 1.0"
-
-  clusters = {
-    # ... cluster configuration
-  }
-}
-```
-
 ## Architecture
+
+![AKS Operation Scheduler Architecture](diagrams/aks-operation-scheduler-diagram.PNG)
 
 The solution uses Azure Logic Apps Consumption to schedule start and stop operations for AKS clusters. For each cluster defined in the `clusters` variable, two workflows are created:
 - One for starting the cluster based on the specified schedule and start time.
