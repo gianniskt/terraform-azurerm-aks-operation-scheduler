@@ -8,7 +8,7 @@ This Terraform module provisions Azure Logic Apps Consumption workflows to autom
 
 To use this module in your Terraform configuration, add the following:
 
-**Terraform Registry**: You can use:
+**Terraform Registry**: [aks-operation-scheduler](https://registry.terraform.io/modules/gianniskt/aks-operation-scheduler/azurerm)
 ```hcl
 module "aks_scheduler" {
   source  = "gianniskt/aks-operation-scheduler/azure"
