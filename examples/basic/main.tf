@@ -1,5 +1,6 @@
 module "aks_operation_scheduler" {
-  source = "../.."
+  source  = "gianniskt/aks-operation-scheduler/azurerm"
+  version = "~> 1.0"
 
   clusters = {
     example-cluster = {

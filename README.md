@@ -10,8 +10,8 @@ To use this module in your Terraform configuration, add the following:
 
 **Terraform Registry**: [aks-operation-scheduler](https://registry.terraform.io/modules/gianniskt/aks-operation-scheduler/azurerm)
 ```hcl
-module "aks_scheduler" {
-  source  = "gianniskt/aks-operation-scheduler/azure"
+module "aks_operation_scheduler" {
+  source  = "gianniskt/aks-operation-scheduler/azurerm"
   version = "~> 1.0"
 
   clusters = {
@@ -41,7 +41,7 @@ module "aks_scheduler" {
 
 ## Architecture
 
-![AKS Operation Scheduler Architecture](diagrams/aks-operation-scheduler-diagram.PNG)
+[View architecture diagram](https://github.com/gianniskt/terraform-azurerm-aks-operation-scheduler/blob/main/diagrams/aks-operation-scheduler-diagram.png)
 
 The solution uses Azure Logic Apps Consumption to schedule start and stop operations for AKS clusters. For each cluster defined in the `clusters` variable, two workflows are created:
 - One for starting the cluster based on the specified schedule and start time.
