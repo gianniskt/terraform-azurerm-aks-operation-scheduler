@@ -128,7 +128,7 @@ module "aks_scheduler" {
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~>3.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement_azurerm) | ~>3.0 |
 
 ## Providers
 
@@ -136,7 +136,7 @@ module "aks_scheduler" {
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 4.56.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider_azurerm) | 4.56.0 |
 
 ## Inputs
 
@@ -144,7 +144,7 @@ module "aks_scheduler" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_clusters"></a> [clusters](#input\_clusters) | Map of clusters with their configs | <pre>map(object({<br/>    resource_group  = string<br/>    location        = string<br/>    subscription_id = string<br/>    cluster_name    = string<br/>    start_schedule = object({<br/>      type   = optional(string, "weekly")<br/>      days   = optional(list(string), [])<br/>      week   = optional(number, null)<br/>      day    = optional(string, null)<br/>      hour   = number<br/>      minute = number<br/>    })<br/>    stop_schedule = object({<br/>      type   = optional(string, "weekly")<br/>      days   = optional(list(string), [])<br/>      week   = optional(number, null)<br/>      day    = optional(string, null)<br/>      hour   = number<br/>      minute = number<br/>    })<br/>    enabled_start = optional(bool, true)<br/>    enabled_stop  = optional(bool, true)<br/>  }))</pre> | n/a | yes |
+| <a name="input_clusters"></a> [clusters](#input_clusters) | Map of clusters with their configs | ```map(object({ resource_group = string location = string subscription_id = string cluster_name = string start_schedule = object({ type = optional(string, "weekly") days = optional(list(string), []) week = optional(number, null) day = optional(string, null) hour = number minute = number }) stop_schedule = object({ type = optional(string, "weekly") days = optional(list(string), []) week = optional(number, null) day = optional(string, null) hour = number minute = number }) enabled_start = optional(bool, true) enabled_stop = optional(bool, true) }))``` | n/a | yes |
 
 ## Outputs
 
@@ -152,11 +152,11 @@ module "aks_scheduler" {
 
 | Name | Description |
 |------|-------------|
-| <a name="output_arm_template_deployment_ids"></a> [arm\_template\_deployment\_ids](#output\_arm\_template\_deployment\_ids) | IDs of the ARM template deployments |
-| <a name="output_logic_app_workflow_ids"></a> [logic\_app\_workflow\_ids](#output\_logic\_app\_workflow\_ids) | IDs of the created Logic App workflows |
-| <a name="output_logic_app_workflow_names"></a> [logic\_app\_workflow\_names](#output\_logic\_app\_workflow\_names) | Names of the created Logic App workflows |
-| <a name="output_role_assignments"></a> [role\_assignments](#output\_role\_assignments) | Role assignments for the Logic Apps |
-| <a name="output_role_definition_ids"></a> [role\_definition\_ids](#output\_role\_definition\_ids) | IDs of the custom role definitions created |
+| <a name="output_arm_template_deployment_ids"></a> [arm_template_deployment_ids](#output_arm_template_deployment_ids) | IDs of the ARM template deployments |
+| <a name="output_logic_app_workflow_ids"></a> [logic_app_workflow_ids](#output_logic_app_workflow_ids) | IDs of the created Logic App workflows |
+| <a name="output_logic_app_workflow_names"></a> [logic_app_workflow_names](#output_logic_app_workflow_names) | Names of the created Logic App workflows |
+| <a name="output_role_assignments"></a> [role_assignments](#output_role_assignments) | Role assignments for the Logic Apps |
+| <a name="output_role_definition_ids"></a> [role_definition_ids](#output_role_definition_ids) | IDs of the custom role definitions created |
 
 ## Schedule Configuration
 
